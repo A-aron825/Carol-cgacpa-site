@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
           
           <div className="flex flex-col relative z-10">
             <span className="text-xl sm:text-2xl md:text-4xl font-black tracking-tighter text-slate-950 serif leading-none group-hover:text-indigo-700 transition-colors">
-              CAROL LIU
+              {t.name.toUpperCase()}
             </span>
             <div className="flex items-center gap-2 mt-1 sm:mt-2">
               <span className="h-0.5 w-3 sm:w-5 bg-indigo-600 rounded-full"></span>
@@ -79,13 +79,13 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-12">
-          <div className="flex items-center space-x-8 xl:space-x-10">
+        <div className="hidden lg:flex items-center space-x-4 xl:space-x-12">
+          <div className="flex items-center space-x-4 xl:space-x-10">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={(e) => handleNavClick(e, item.id)}
-                className="text-[10px] xl:text-[11px] font-black text-slate-600 hover:text-indigo-600 transition-all uppercase tracking-[0.2em] xl:tracking-[0.25em] relative group"
+                className="text-[9px] xl:text-[11px] font-black text-slate-600 hover:text-indigo-600 transition-all uppercase tracking-[0.1em] xl:tracking-[0.25em] relative group"
               >
                 {item.label}
                 <span className="absolute -bottom-2.5 left-0 w-0 h-[3px] bg-indigo-600 transition-all group-hover:w-full rounded-full"></span>
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
           </div>
 
           {/* Language Switcher */}
-          <div className="relative flex items-center bg-slate-100 rounded-full p-1 border border-slate-200 shadow-inner">
+          <div className="relative flex items-center bg-slate-100 rounded-full p-1 border border-slate-200 shadow-inner scale-90 xl:scale-100">
             <div className={`absolute h-[calc(100%-8px)] w-[calc(50%-4px)] bg-indigo-600 rounded-full transition-all duration-500 ease-out ${lang === 'en' ? 'translate-x-0' : 'translate-x-full'}`}></div>
             <button 
               onClick={() => setLang('en')}
@@ -113,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
           {/* Action Button */}
           <button
             onClick={(e) => handleNavClick(e, 'contact')}
-            className="group relative px-6 xl:px-10 py-4 xl:py-5 overflow-hidden rounded-full transition-all duration-500 active:scale-95 shadow-lg"
+            className="group relative px-4 xl:px-10 py-3 xl:py-5 overflow-hidden rounded-full transition-all duration-500 active:scale-95 shadow-lg"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 transition-all duration-500 group-hover:scale-110"></div>
             <span className="relative z-10 text-white text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] xl:tracking-[0.3em] flex items-center gap-2 xl:gap-3">

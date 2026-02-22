@@ -12,9 +12,10 @@ const About: React.FC<AboutProps> = ({ lang, t }) => {
       <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div className="lg:col-span-5 relative order-2 lg:order-1">
           <div className="aspect-[4/5] sm:aspect-square rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white bg-slate-100 group">
+             {/* CUSTOMIZATION: Replace the src below with your own photo URL or local path */}
              <img 
                src="/carol-portrait.jpg" 
-               alt="Carol Liu, CPA Professional Headshot" 
+               alt={`${t.name} Professional Headshot`} 
                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-1000 ease-out"
                onError={(e) => {
                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800";

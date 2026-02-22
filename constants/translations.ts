@@ -2,6 +2,7 @@
 export const translations = {
   en: {
     nav: {
+      name: 'Carol Liu',
       home: 'Home',
       services: 'Services',
       about: 'About',
@@ -11,7 +12,6 @@ export const translations = {
       corp: 'Professional Corp.',
     },
     hero: {
-      onboarding: 'Now Onboarding Clients • 2024/25',
       title1: 'Financial',
       title2: 'excellence,',
       title3: 'defined by precision.',
@@ -53,6 +53,7 @@ export const translations = {
     },
     about: {
       tag: 'Directorship',
+      name: 'Carol Liu',
       title: 'Carol Liu,',
       titleItalic: 'Principal Architect.',
       p1: 'With over 15 years in high-stakes public practice, Carol Liu brings a unique fusion of analytical rigor and tactical vision.',
@@ -97,6 +98,7 @@ export const translations = {
   },
   zh: {
     nav: {
+      name: 'Carol Liu',
       home: '主页',
       services: '专业服务',
       about: '关于我们',
@@ -106,7 +108,6 @@ export const translations = {
       corp: '专业会计师事务所',
     },
     hero: {
-      onboarding: '现正招收新客户 • 2024/25',
       title1: '卓越财务',
       title2: '管理，',
       title3: '源于精准执着。',
@@ -148,6 +149,7 @@ export const translations = {
     },
     about: {
       tag: '负责人',
+      name: 'Carol Liu',
       title: 'Carol Liu,',
       titleItalic: '首席架构师。',
       p1: '拥有超过15年的高端公共执业经验，Carol Liu 将严密的分析与战术愿景完美结合。',

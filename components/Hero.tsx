@@ -29,16 +29,6 @@ const Hero: React.FC<HeroProps> = ({ lang, t }) => {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="max-w-3xl text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-white shadow-sm border border-slate-100 rounded-full mb-6 sm:mb-10 transform hover:scale-105 transition-transform cursor-default">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
-              </span>
-              <span className="text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-600">
-                {t.onboarding}
-              </span>
-            </div>
-
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-6 sm:mb-8 leading-[1.1] md:leading-[0.95] tracking-tight">
               {t.title1} <br className="hidden sm:block" />
               <span className="text-indigo-600 italic serif font-normal">{t.title2}</span> <br className="hidden sm:block" />
@@ -82,6 +72,7 @@ const Hero: React.FC<HeroProps> = ({ lang, t }) => {
 
           <div className="relative hidden lg:block perspective-1000">
             <div className="relative z-10 rounded-[3rem] xl:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] transform rotate-3 hover:rotate-0 transition-all duration-1000">
+              {/* CUSTOMIZATION: Replace the src below with your own photo URL or local path */}
               <img 
                 src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200" 
                 alt="Professional Accounting and Strategy" 
