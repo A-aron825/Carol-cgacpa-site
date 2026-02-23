@@ -85,7 +85,7 @@ export const translations = {
         context: 'Context',
         msgPlace: 'Briefly describe your requirements...',
         submit: 'Transmit Inquiry',
-        success: 'Request Transmitted'
+        success: 'Inquiry Sent Successfully'
       }
     },
     footer: {
@@ -181,7 +181,7 @@ export const translations = {
         context: '背景描述',
         msgPlace: '简要描述您的需求...',
         submit: '提交咨询',
-        success: '咨询已发送'
+        success: '咨询已成功发送'
       }
     },
     footer: {

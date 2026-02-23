@@ -17,7 +17,7 @@ const Contact: React.FC<ContactProps> = ({ lang, t }) => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
 
@@ -26,17 +26,35 @@ const Contact: React.FC<ContactProps> = ({ lang, t }) => {
     const email = formData.get('email') as string;
     const message = formData.get('message') as string;
 
-    const subject = `Inquiry: ${name} via carolcga.ca`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    const mailtoUrl = `mailto:cLiu@carolcga.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    setTimeout(() => {
+      if (response.ok) {
+        setStatus('success');
+        if (formRef.current) formRef.current.reset();
+        setTimeout(() => setStatus(null), 6000);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.details || errorData.error || 'Failed to send');
+      }
+    } catch (error: any) {
+      console.error('Automatic send failed:', error.message);
+      
+      // Fallback to mailto if API fails
+      const subject = `Inquiry: ${name} via Website`;
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const mailtoUrl = `mailto:cLiu@carolcga.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // We still show success but trigger the fallback
       window.location.href = mailtoUrl;
       setStatus('success');
-      if (formRef.current) formRef.current.reset();
-      setTimeout(() => setStatus(null), 5000);
-    }, 800);
+    }
   };
 
   return (
