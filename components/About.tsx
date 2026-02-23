@@ -14,7 +14,7 @@ const About: React.FC<AboutProps> = ({ lang, t }) => {
           <div className="aspect-[4/5] sm:aspect-square rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white bg-slate-100 group">
              {/* CUSTOMIZATION: Replace the src below with your own photo URL or local path */}
              <img 
-               src="/carol-picture.jpg" 
+               src="./carol-portrait.jpg" 
                alt={`${t.name} Professional Headshot`} 
                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-1000 ease-out"
                onError={(e) => {
