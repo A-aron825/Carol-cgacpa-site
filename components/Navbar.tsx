@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
             </div>
           </div>
           
-          <div className="h-8 md:h-12 w-px bg-slate-300 hidden lg:block xl:block rotate-[15deg] opacity-50 mx-1 xl:mx-2"></div>
+          <div className="h-8 md:h-12 w-px bg-slate-300 hidden xl:block 2xl:block rotate-[15deg] opacity-50 mx-1 2xl:mx-2"></div>
           
           <div className="relative group/badge hidden 2xl:block z-10">
             <div className="absolute -inset-1.5 bg-indigo-600/20 rounded-xl blur-md opacity-0 group-hover/badge:opacity-100 transition-opacity"></div>
@@ -79,13 +79,13 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-2 xl:space-x-12">
-          <div className="flex items-center space-x-2 xl:space-x-10">
+        <div className="hidden xl:flex items-center space-x-4 2xl:space-x-12">
+          <div className="flex items-center space-x-4 2xl:space-x-10">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={(e) => handleNavClick(e, item.id)}
-                className="text-[8px] xl:text-[11px] font-black text-slate-600 hover:text-indigo-600 transition-all uppercase tracking-[0.05em] xl:tracking-[0.25em] relative group px-1"
+                className="text-[10px] 2xl:text-[11px] font-black text-slate-600 hover:text-indigo-600 transition-all uppercase tracking-[0.1em] 2xl:tracking-[0.25em] relative group px-1"
               >
                 {item.label}
                 <span className="absolute -bottom-2.5 left-0 w-0 h-[3px] bg-indigo-600 transition-all group-hover:w-full rounded-full"></span>
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
           </div>
 
           {/* Language Switcher */}
-          <div className="relative flex items-center bg-slate-100 rounded-full p-0.5 xl:p-1 border border-slate-200 shadow-inner scale-75 xl:scale-100 origin-right">
+          <div className="relative flex items-center bg-slate-100 rounded-full p-0.5 2xl:p-1 border border-slate-200 shadow-inner scale-90 2xl:scale-100 origin-right">
             <div className={`absolute h-[calc(100%-8px)] w-[calc(50%-4px)] bg-indigo-600 rounded-full transition-all duration-500 ease-out ${lang === 'en' ? 'translate-x-0' : 'translate-x-full'}`}></div>
             <button 
               onClick={() => setLang('en')}
@@ -113,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
           {/* Action Button */}
           <button
             onClick={(e) => handleNavClick(e, 'contact')}
-            className="group relative px-3 xl:px-10 py-2.5 xl:py-5 overflow-hidden rounded-full transition-all duration-500 active:scale-95 shadow-lg scale-90 xl:scale-100 origin-right"
+            className="group relative px-4 2xl:px-10 py-3 2xl:py-5 overflow-hidden rounded-full transition-all duration-500 active:scale-95 shadow-lg scale-90 2xl:scale-100 origin-right"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 transition-all duration-500 group-hover:scale-110"></div>
             <span className="relative z-10 text-white text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] xl:tracking-[0.3em] flex items-center gap-2 xl:gap-3">
@@ -124,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex lg:hidden items-center gap-2 sm:gap-4">
+        <div className="flex xl:hidden items-center gap-2 sm:gap-4">
           <button 
             onClick={() => setLang(lang === 'en' ? 'zh' : 'en')}
             className="px-3 sm:px-5 py-2 sm:py-3 bg-indigo-600 text-white rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs shadow-lg active:scale-90 transition-transform"
@@ -138,7 +138,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled, lang, setLang, t }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl transition-all duration-500 ease-out transform ${
+      <div className={`xl:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-2xl transition-all duration-500 ease-out transform ${
         isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'
       }`}>
         <div className="py-8 md:py-12 px-6 md:px-8 space-y-6 md:space-y-8">
